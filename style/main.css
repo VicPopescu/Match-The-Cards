@@ -1,3 +1,16 @@
-p {
-    color: red;
+
+.login {
+    height: 100%;
+    width: 100%;
+    background-color: lime;
+}
+.game {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.text-center {
+    margin-top: 0;
+    margin-bottom: 0;
 }
