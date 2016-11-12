@@ -1,16 +1,98 @@
+/*general*/
+/*centering absolute*/
+.centerAbsolute{
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
 
-.login {
+.login,
+.game {
     height: 100%;
     width: 100%;
-    background-color: lime;
+    background-color: white;
+    background-image:url('../assets/bg3.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.loginForm {
+  height: 400px;
+  width: 800px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 15px #000;
+}
+
+.loginInputs{
+  height: 100%;
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.userName,
+.difficulty{
+  padding: 10px;
+}
+
+.userName,
+.difficulty,
+.startButton{
+  display: block;
+  margin: 50px auto;
+  height: 50px;
+  width: 200px;
 }
 .game {
     display: none;
     height: 100%;
     width: 100%;
+    padding-top: 150px;
+}
+
+.cardContainer{
+  width: 1024px;
+  height: 824px;
+  margin: 0 auto;
+}
+
+.cardEasy {
+  position: relative;
+    float: left;
+  display: inline-block;
+  width: 256px;
+  height: 206px;
+  border: 1px solid green;
+}
+
+.cardMedium{
+  position: relative;
+  float: left;
+  display: inline-block;
+  width: 170.6px;
+  height: 137.3px;
+  border: 1px solid green;
+}
+
+.cardHard{
+  position: relative;
+  float: left;
+  display: inline-block;
+  width: 128px;
+  height: 103px;
+  border: 1px solid green;
 }
 
 .text-center {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+@media screen and (max-width: 790px) {
+    .loginForm {
+      width: 500px;
+    }
 }
