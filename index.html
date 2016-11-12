@@ -1,35 +1,55 @@
 <html>
-    <head>
-        <title>
-        </title>
+
+<head>
+    <title>
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="vendor/style/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/style/normalize.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+
+<body>
+    <!--################ LOGIN SECTION ###################-->
+    <section class="login">
+
+        <section class="loginForm centerAbsolute">
+            <div class="loginInputs">
+                <input type="text" class="userName" placeholder="User Name">
+                <select class="difficulty">
+                   <option value="easy">Easy</option>
+                   <option value="medium">Medium</option>
+                   <option value="hard">Hard</option>
+               </select>
+               <button type="button" class="btn btn-default startButton">Start</button>
+          </div>
+
+
+
+
+        </section>
+        <!-- END- loginForm -->
+
+
+
+
+
+    </section>
+    <!--################ GAME SECTION ###################-->
+    <section class="game">
+        <section class="cardContainer cardContainerEasy">
         
-        <link rel="stylesheet" type="text/css" href="vendor/style/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="vendor/style/normalize.css">
-        <link rel="stylesheet" type="text/css" href="style/main.css">
-    </head>
-    
-    <body>
-        <!--################ LOGIN SECTION ###################-->
-        <section class="login">
-            <h1 class="text-center loginButton">Login</h1>
-
-
-
-
 
         </section>
-        <!--################ GAME SECTION ###################-->
-        <section class="game">
-            <h1 class="text-center">Game</h1>
 
 
 
 
+    </section>
+    <!--################ SCRIPTS ###################-->
+    <script src="vendor/script/jquery-3.1.1.min.js"></script>
+    <script src="script/script.js"></script>
 
-        </section>
-        <!--################ SCRIPTS ###################-->
-        <script src="vendor/script/jquery-3.1.1.min.js"></script>
-        <script src="script/script.js"></script>
+</body>
 
-    </body>
 </html>
