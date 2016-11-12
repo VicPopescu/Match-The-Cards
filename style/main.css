@@ -53,6 +53,23 @@
     padding-top: 150px;
 }
 
+.userTitle,
+.time {
+  position: absolute;
+  font-size: 30px;
+  color: fuchsia;
+  font-weight: bold;
+  top: 10px;
+}
+
+.userTitle {
+  left: 10px;
+}
+
+.time {
+  right: 10px;
+}
+
 .cardContainer{
   width: 1024px;
   height: 824px;
