@@ -103,7 +103,9 @@ var cardOnClick = function() {
                         if (arrayOfAttributes.length == 2) {
 
                             if (arrayOfAttributes[0] == arrayOfAttributes[1]) {
-                                equals(arrayOfAttributes[0]);
+                              var firstEqualCard = arrayOfAttributes.slice(1);
+                              equals(firstEqualCard);
+
                                 arrayOfAttributes = [];
 
                             } else {
@@ -125,11 +127,12 @@ var cardOnClick = function() {
 
 
       function equals (attr){
-        $cardContainer.find('div[data-cardNumber ='+ attr +']').css('display', 'none');
+        setTimeout(function(){
+          $cardContainer.find('div[data-cardNumber ='+ attr +']').css('display', 'none');
+        }, 1000)
+
       }
-      function unequals (){
-        
-      }
+      function unequals (){}
 
 
   });
