@@ -16,22 +16,22 @@ var arrayOfColors = [];
 
 
 // handling difficulty
-(function difficultyHandling(){
+(function difficultyHandling() {
 
-  difficulty = $difficultySelect.val();
-  $difficultySelect.change(function(){
-  difficulty = $difficultySelect.val();
-  });
+    difficulty = $difficultySelect.val();
+    $difficultySelect.change(function() {
+        difficulty = $difficultySelect.val();
+    });
 })();
 
 // on start
-$loginButton.on("click", function(){
+$loginButton.on("click", function() {
 
     // initialising userName
     var userName = "";
     userName = $userName.val();
-    if (userName == ""){
-      userName = "Player1";
+    if (userName == "") {
+        userName = "Player1";
     };
     //display username
     $userTitle.text(userName);
@@ -39,19 +39,23 @@ $loginButton.on("click", function(){
     //change view from login to game
     $loginSection.css("display", "none");
     $gameSection.css({
-        "display":"block",
-        "background-color":"red"
+        "display": "block",
+        "background-color": "red"
     });
 
     //handling game difficulty
     switch (difficulty) {
-      case 'easy': howManyCards(8, "easyStyle")
-      break;
-      case 'medium': howManyCards(18, "mediumStyle")
-      break;
-      case 'hard': howManyCards(32, "hardStyle")
-      break;
-      default: break;
+        case 'easy':
+            howManyCards(8, "easyStyle")
+            break;
+        case 'medium':
+            howManyCards(18, "mediumStyle")
+            break;
+        case 'hard':
+            howManyCards(32, "hardStyle")
+            break;
+        default:
+            break;
     }
 })
 
@@ -67,75 +71,76 @@ var howManyCards = function(cardNumber, style) {
     if (style == "hardStyle") cardStyle = "cardHard";
 
     //generate array of cards
-    for (var i = 0; i < cardNumber; i++){
+    for (var i = 0; i < cardNumber; i++) {
 
-      card = "<div class='card " + cardStyle + " cardColor" + i + " cardAfter' data-cardNumber= "+ i +"></div>";
-      arrayOfCards.push(card);
-      arrayOfCards.push(card);
+        card = "<div class='card " + cardStyle + " cardColor" + i + " cardAfter' data-cardNumber= " + i + "></div>";
+        arrayOfCards.push(card);
+        arrayOfCards.push(card);
     }
 
     //generate random number
     function getRandomArbitrary(min, max) {
-      return Math.floor(Math.random() * (max - min) + min);
+        return Math.floor(Math.random() * (max - min) + min);
     }
 
     //append cards in DOM
     for (var j = arrayOfCards.length; j > 0; j--) {
 
-      var rand = getRandomArbitrary(0, arrayOfCards.length-1);
-      $cardContainer.append(arrayOfCards[rand]);
-      arrayOfCards.splice(rand, 1);
+        var rand = getRandomArbitrary(0, arrayOfCards.length - 1);
+        $cardContainer.append(arrayOfCards[rand]);
+        arrayOfCards.splice(rand, 1);
     }
 }
 
 // handling click on cards
 var cardOnClick = function() {
 
-        $(document).on("click", '.card', function() {
+    $(document).on("click", '.card', function() {
 
-                    if (arrayOfAttributes.length < 2) {
+        if (arrayOfAttributes.length < 2) {
 
-                        var dataAttribute = $(this).attr("data-cardNumber");
+            var dataAttribute = $(this).attr("data-cardNumber");
 
-                        $(this).removeClass('cardAfter');
-                        arrayOfAttributes.push(dataAttribute);
+            $(this).removeClass('cardAfter');
+            arrayOfAttributes.push(dataAttribute);
 
-                        if (arrayOfAttributes.length == 2) {
+            if (arrayOfAttributes.length == 2) {
 
-                            if (arrayOfAttributes[0] == arrayOfAttributes[1]) {
-                              var firstEqualCard = arrayOfAttributes.slice(1);
-                              equals(firstEqualCard);
+                if (arrayOfAttributes[0] == arrayOfAttributes[1]) {
+                    var firstEqualCard = arrayOfAttributes.slice(1);
+                    equals(firstEqualCard);
 
-                                arrayOfAttributes = [];
+                    arrayOfAttributes = [];
 
-                            } else {
+                } else {
 
-                                setTimeout(function() {
-                                    var firstCard = arrayOfAttributes.slice(0, 1);
-                                    var secondCard = arrayOfAttributes.slice(1);
+                    setTimeout(function() {
+                        var firstCard = arrayOfAttributes.slice(0, 1);
+                        var secondCard = arrayOfAttributes.slice(1);
 
-                                    $cardContainer.find('div[data-cardNumber =' + firstCard + ']').addClass("cardAfter");
-                                    $cardContainer.find('div[data-cardNumber =' + secondCard + ']').addClass("cardAfter");
-                                    arrayOfAttributes = [];
-                                }, 1000);
+                        $cardContainer.find('div[data-cardNumber =' + firstCard + ']').addClass("cardAfter");
+                        $cardContainer.find('div[data-cardNumber =' + secondCard + ']').addClass("cardAfter");
+                        arrayOfAttributes = [];
+                    }, 1000);
 
-                                unequals();
-                            }
-                        }
-                    }
-
-
-
-      function equals (attr){
-        setTimeout(function(){
-          $cardContainer.find('div[data-cardNumber ='+ attr +']').css('display', 'none');
-        }, 1000)
-
-      }
-      function unequals (){}
+                    unequals();
+                }
+            }
+        }
 
 
-  });
+
+        function equals(attr) {
+            setTimeout(function() {
+                $cardContainer.find('div[data-cardNumber =' + attr + ']').css('display', 'none');
+            }, 1000)
+
+        }
+
+        function unequals() {}
+
+
+    });
 
 
 }
