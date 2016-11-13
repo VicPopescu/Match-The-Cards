@@ -142,11 +142,12 @@
     }
 }
 
-@media screen and (max-height: 700px){
+@media screen and (max-height: 800px){
   .cardContainer {
     height: 600px;
     width: 800px;
   }
+
   .cardEasy {
     height: 150px;
     width: 200px;
