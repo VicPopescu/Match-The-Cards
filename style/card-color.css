@@ -1,0 +1,55 @@
+.cardColor0 {
+  background-image:url('../assets/cards/aceOfSpades.png');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+
+.cardColor1 {
+  background-image:url('../assets/cards/aceOfHearts.png');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+
+.cardColor2 {
+  background-image:url('../assets/cards/aceOfDiamonds.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+
+.cardColor3 {
+  background-image:url('../assets/cards/aceOfClubs.png');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+
+.cardColor4 {
+  background-image:url('../assets/cards/jackOfDiamonds.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+
+.cardColor5 {
+  background-image:url('../assets/cards/jackOfHearts.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+
+.cardColor6 {
+  background-image:url('../assets/cards/jackOfSpades.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+
+.cardColor7 {
+  background-image:url('../assets/cards/jackOfClubs.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
