@@ -1,3 +1,7 @@
+/*includes */
+@import "card-color.css";
+
+
 /*general*/
 /*centering absolute*/
 .centerAbsolute{
@@ -74,6 +78,10 @@
   width: 1024px;
   height: 824px;
   margin: 0 auto;
+  background-image:url('../assets/bg5.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
 }
 
 .cardEasy {
@@ -101,6 +109,24 @@
   width: 128px;
   height: 103px;
   border: 1px solid green;
+}
+
+.cardStars {
+  background-image:url('../assets/bg6.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+.cardAfter::after {
+  content:"";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image:url('../assets/bg6.jpg');
 }
 
 .text-center {
