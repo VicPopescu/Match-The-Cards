@@ -44,6 +44,7 @@
 
 .userName, .difficulty {
     padding: 10px;
+    border-radius: 5px;
 }
 
 .userName, .difficulty, .startButton {
@@ -51,6 +52,7 @@
     margin: 50px auto;
     height: 50px;
     width: 200px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .game {

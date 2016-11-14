@@ -27,6 +27,8 @@ var arrayOfColors = [];
 // on start
 $loginButton.on("click", function() {
 
+    doTimer();
+
     // initialising userName
     var userName = "";
     userName = $userName.val();
@@ -40,8 +42,8 @@ $loginButton.on("click", function() {
     $loginSection.css("display", "none");
     $gameSection.css({
         "display": "block",
-        "background-color": "red"
     });
+
 
     //handling game difficulty
     switch (difficulty) {
@@ -145,3 +147,30 @@ var cardOnClick = function() {
 
 }
 cardOnClick();
+
+
+
+var c=0;
+var minutes= 0;
+var t;
+var timer_is_on=0;
+
+function timedCount()
+{
+$('#timer').html(minutes + 'm' +" "+ c + 's');
+c=c+1;
+if (c%60==0){
+minutes+=1;
+c=0;
+}
+t=setTimeout("timedCount()",1000);
+}
+
+function doTimer()
+{
+if (!timer_is_on)
+  {
+  timer_is_on=1;
+  timedCount();
+  }
+}
