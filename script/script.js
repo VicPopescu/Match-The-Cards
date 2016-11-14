@@ -6,6 +6,7 @@ var $userName = $(".userName");
 var $loginButton = $(".startButton");
 var $difficultySelect = $(".difficulty");
 var $userTitle = $(".userTitle");
+var $gameOverSection = $(".gameOver");
 
 // variables
 var numberOfCards = 0;
@@ -14,6 +15,8 @@ var difficulty = '';
 var arrayOfCards = [];
 var arrayOfAttributes = [];
 var arrayOfColors = [];
+var userName = "";
+userName = $userName.val();
 
 
 // handling difficulty
@@ -31,8 +34,7 @@ $loginButton.on("click", function() {
     doTimer();
 
     // initialising userName
-    var userName = "";
-    userName = $userName.val();
+
     if (userName == "") {
         userName = "Player1";
     };
@@ -133,7 +135,7 @@ var cardOnClick = function() {
         }
 
 
-
+// game over alert
         function equals(attr) {
 
             setTimeout(function() {
@@ -142,7 +144,23 @@ var cardOnClick = function() {
                 console.log(countDeletedCards);
                 console.log(numberOfCards);
                 if (countDeletedCards == numberOfCards){
-                  alert("Game Over");
+                  $gameSection.css(
+                    "display", "none"
+                  );
+                  $gameOverSection.css({
+                    "display": "block",
+                  });
+                  $(".endName").append("Name: ", userName);
+                  $(".endTime").append("Time: " + minutes + 'm' + " " + c + 's');
+
+                  $('.retryButton').click(function() {
+                    location.reload();
+                  });
+                  function stopCount() {
+                    clearTimeout(t);
+                    timer_is_on = false;
+
+                  };
                 }
             }, 1000)
 
@@ -172,6 +190,7 @@ function timedCount() {
         c = 0;
     }
     t = setTimeout("timedCount()", 1000);
+
 }
 
 function doTimer() {
