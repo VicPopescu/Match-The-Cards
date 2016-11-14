@@ -9,6 +9,7 @@ var $userTitle = $(".userTitle");
 
 // variables
 var numberOfCards = 0;
+var countDeletedCards = 0;
 var difficulty = '';
 var arrayOfCards = [];
 var arrayOfAttributes = [];
@@ -67,6 +68,7 @@ var howManyCards = function(cardNumber, style) {
 
     var cardStyle = "";
     var card = "";
+    numberOfCards = cardNumber * 2;//number of total cards
 
     if (style == "easyStyle") cardStyle = "cardEasy";
     if (style == "mediumStyle") cardStyle = "cardMedium";
@@ -133,8 +135,15 @@ var cardOnClick = function() {
 
 
         function equals(attr) {
+
             setTimeout(function() {
                 $cardContainer.find('div[data-cardNumber =' + attr + ']').css('display', 'none');
+                countDeletedCards += 2;
+                console.log(countDeletedCards);
+                console.log(numberOfCards);
+                if (countDeletedCards == numberOfCards){
+                  alert("Game Over");
+                }
             }, 1000)
 
         }
@@ -149,11 +158,11 @@ var cardOnClick = function() {
 cardOnClick();
 
 
-
+// handling timer
 var c = 0;
 var minutes = 0;
 var t;
-var timer_is_on = 0;
+var timer_is_on = false;
 
 function timedCount() {
     $('#timer').html(minutes + 'm' + " " + c + 's');
@@ -167,7 +176,8 @@ function timedCount() {
 
 function doTimer() {
     if (!timer_is_on) {
-        timer_is_on = 1;
+        timer_is_on = true;
         timedCount();
     }
 }
+// end of handling timer
