@@ -150,27 +150,24 @@ cardOnClick();
 
 
 
-var c=0;
-var minutes= 0;
+var c = 0;
+var minutes = 0;
 var t;
-var timer_is_on=0;
+var timer_is_on = 0;
 
-function timedCount()
-{
-$('#timer').html(minutes + 'm' +" "+ c + 's');
-c=c+1;
-if (c%60==0){
-minutes+=1;
-c=0;
-}
-t=setTimeout("timedCount()",1000);
+function timedCount() {
+    $('#timer').html(minutes + 'm' + " " + c + 's');
+    c = c + 1;
+    if (c % 60 == 0) {
+        minutes += 1;
+        c = 0;
+    }
+    t = setTimeout("timedCount()", 1000);
 }
 
-function doTimer()
-{
-if (!timer_is_on)
-  {
-  timer_is_on=1;
-  timedCount();
-  }
+function doTimer() {
+    if (!timer_is_on) {
+        timer_is_on = 1;
+        timedCount();
+    }
 }
