@@ -6,13 +6,17 @@ var $userName = $(".userName");
 var $loginButton = $(".startButton");
 var $difficultySelect = $(".difficulty");
 var $userTitle = $(".userTitle");
+var $gameOverSection = $(".gameOver");
 
 // variables
 var numberOfCards = 0;
+var countDeletedCards = 0;
 var difficulty = '';
 var arrayOfCards = [];
 var arrayOfAttributes = [];
 var arrayOfColors = [];
+var userName = "";
+userName = $userName.val();
 
 
 // handling difficulty
@@ -27,9 +31,10 @@ var arrayOfColors = [];
 // on start
 $loginButton.on("click", function() {
 
+    doTimer();
+
     // initialising userName
-    var userName = "";
-    userName = $userName.val();
+
     if (userName == "") {
         userName = "Player1";
     };
@@ -40,8 +45,8 @@ $loginButton.on("click", function() {
     $loginSection.css("display", "none");
     $gameSection.css({
         "display": "block",
-        "background-color": "red"
     });
+
 
     //handling game difficulty
     switch (difficulty) {
@@ -65,6 +70,7 @@ var howManyCards = function(cardNumber, style) {
 
     var cardStyle = "";
     var card = "";
+    numberOfCards = cardNumber * 2;//number of total cards
 
     if (style == "easyStyle") cardStyle = "cardEasy";
     if (style == "mediumStyle") cardStyle = "cardMedium";
@@ -129,10 +135,33 @@ var cardOnClick = function() {
         }
 
 
-
+// game over alert
         function equals(attr) {
+
             setTimeout(function() {
                 $cardContainer.find('div[data-cardNumber =' + attr + ']').css('display', 'none');
+                countDeletedCards += 2;
+                console.log(countDeletedCards);
+                console.log(numberOfCards);
+                if (countDeletedCards == numberOfCards){
+                  $gameSection.css(
+                    "display", "none"
+                  );
+                  $gameOverSection.css({
+                    "display": "block",
+                  });
+                  $(".endName").append("Name: ", userName);
+                  $(".endTime").append("Time: " + minutes + 'm' + " " + c + 's');
+
+                  $('.retryButton').click(function() {
+                    location.reload();
+                  });
+                  function stopCount() {
+                    clearTimeout(t);
+                    timer_is_on = false;
+
+                  };
+                }
             }, 1000)
 
         }
@@ -145,3 +174,29 @@ var cardOnClick = function() {
 
 }
 cardOnClick();
+
+
+// handling timer
+var c = 0;
+var minutes = 0;
+var t;
+var timer_is_on = false;
+
+function timedCount() {
+    $('#timer').html(minutes + 'm' + " " + c + 's');
+    c = c + 1;
+    if (c % 60 == 0) {
+        minutes += 1;
+        c = 0;
+    }
+    t = setTimeout("timedCount()", 1000);
+
+}
+
+function doTimer() {
+    if (!timer_is_on) {
+        timer_is_on = true;
+        timedCount();
+    }
+}
+// end of handling timer
