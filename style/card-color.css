@@ -1,61 +1,61 @@
 .cardColor0 {
-  background-image:url('../assets/cards/aceOfSpades.png');
+  background-image:url('../assets/cats/0.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
 }
 
 .cardColor1 {
-  background-image:url('../assets/cards/aceOfHearts.png');
+  background-image:url('../assets/cats/1.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
 }
 
 .cardColor2 {
-  background-image:url('../assets/cards/aceOfDiamonds.jpg');
+  background-image:url('../assets/cats/2.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
 }
 
 .cardColor3 {
-  background-image:url('../assets/cards/aceOfClubs.png');
+  background-image:url('../assets/cats/3.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
 }
 
 .cardColor4 {
-  background-image:url('../assets/cards/jackOfDiamonds.jpg');
+  background-image:url('../assets/cats/4.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
 }
 
 .cardColor5 {
-  background-image:url('../assets/cards/jackOfHearts.jpg');
+  background-image:url('../assets/cats/5.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
 }
 
 .cardColor6 {
-  background-image:url('../assets/cards/jackOfSpades.jpg');
+  background-image:url('../assets/cats/6.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
 }
 
 .cardColor7 {
-  background-image:url('../assets/cards/jackOfClubs.jpg');
+  background-image:url('../assets/cats/7.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
 }
 
 .cardColor8 {
-  background-image:url('../assets/cards/kingOfClubs.jpg');
+  background-image:url('../assets/cats/8.jpg');
   background-repeat:no-repeat;
   background-size:contain;
   background-position:center;
