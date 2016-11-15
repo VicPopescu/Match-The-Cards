@@ -133,6 +133,7 @@
 }
 
 .gameOverContainer {
+  position: relative;
   width: 1024px;
   height: 824px;
   margin: 0 auto;
@@ -187,7 +188,8 @@
 }
 
 @media screen and (max-height: 800px){
-  .cardContainer {
+  .cardContainer,
+  .gameOverContainer {
     height: 500px;
     width: 600px;
   }
