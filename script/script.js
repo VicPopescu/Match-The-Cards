@@ -16,7 +16,6 @@ var arrayOfCards = [];
 var arrayOfAttributes = [];
 var arrayOfColors = [];
 var userName = "";
-userName = $userName.val();
 
 
 // handling difficulty
@@ -34,6 +33,7 @@ $loginButton.on("click", function() {
     doTimer();
 
     // initialising userName
+    userName = $userName.val();
 
     if (userName == "") {
         userName = "Player1";
